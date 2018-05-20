@@ -1,3 +1,5 @@
+create database `5aattiva`; 
+
 USE `5aattiva`;
 
 CREATE TABLE `5aattiva`.produto (
