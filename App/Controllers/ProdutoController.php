@@ -86,7 +86,7 @@ class ProdutoController extends Controller
         $produto = $produtoDAO->listar($id);
 
         if(!$produto){
-            Sessao::gravaMensagem("Produto inexistente");
+            Sessao::gravaMensagem("Atividade inexistente");
             $this->redirect('/produto');
         }
 
@@ -151,7 +151,7 @@ class ProdutoController extends Controller
         $produto = $produtoDAO->listar($id);
 
         if(!$produto){
-            Sessao::gravaMensagem("Produto inexistente");
+            Sessao::gravaMensagem("Atividade inexistente");
             $this->redirect('/produto');
         }
 
@@ -171,11 +171,11 @@ class ProdutoController extends Controller
         $produtoDAO = new ProdutoDAO();
 
         if(!$produtoDAO->excluir($Produto)){
-            Sessao::gravaMensagem("Produto inexistente");
+            Sessao::gravaMensagem("Atividade inexistente");
             $this->redirect('/produto');
         }
 
-        Sessao::gravaMensagem("Produto excluido com sucesso!");
+        Sessao::gravaMensagem("Atividade excluido com sucesso!");
 
         $this->redirect('/produto');
 

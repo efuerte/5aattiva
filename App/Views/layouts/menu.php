@@ -17,24 +17,21 @@
                 </li>
                 
                 <li <?php if($viewVar['nameController'] == "ProdutoController" && ($viewVar['nameAction'] == "" || $viewVar['nameAction'] == "index")) { ?> class="active" <?php } ?>>
-                    <a href="http://<?php echo APP_HOST; ?>/produto" >Lista de Produtos</a>
+                    <a href="http://<?php echo APP_HOST; ?>/produto" >Lista de Atividades</a>
                 </li>
                 <li <?php if($viewVar['nameController'] == "ProdutoController" && $viewVar['nameAction'] == "cadastro") { ?> class="active" <?php } ?>>
-                    <a href="http://<?php echo APP_HOST; ?>/produto/cadastro" >Cadastro de Produtos</a>
+                    <a href="http://<?php echo APP_HOST; ?>/produto/cadastro" >Cadastro de Atividades</a>
                 </li>
                 
-
+                <!--
                 <li <?php if($viewVar['nameController'] == "AtividadeController" && ($viewVar['nameAction'] == "" || $viewVar['nameAction'] == "index")) { ?> class="active" <?php } ?>>
                     <a href="http://<?php echo APP_HOST; ?>/atividade" >Lista de Atividades</a>
                 </li>
                 <li <?php if($viewVar['nameController'] == "AtividadeController" && $viewVar['nameAction'] == "cadastro") { ?> class="active" <?php } ?>>
                     <a href="http://<?php echo APP_HOST; ?>/atividade/cadastro" >Cadastro de Atividades</a>
                 </li>
+                -->
 
-
-                
-                
-                
                 
             </ul>
         </div>

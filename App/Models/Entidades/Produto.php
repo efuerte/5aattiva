@@ -122,6 +122,9 @@ class Produto
             case 3:
                 $retorno = "Em Teste";
                 break;
+            case 4:
+                $retorno = "Concluido";
+                break;
             default:
               $retorno = "Indefinido";  ;
         }

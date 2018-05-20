@@ -86,7 +86,7 @@
 <script>
 $(function() {
 	$('.table tr').each(function(i,e) {
-		if ($('td:eq(5)', this).text() == 'Ativo') {
+		if ($('td:eq(4)', this).text() == 'Concluido') {
 			$(this).css({backgroundColor: 'green'});
 		}
 	});
