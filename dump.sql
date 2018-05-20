@@ -1,3 +1,5 @@
+-- Criação da base de dados e tabela
+
 create database 5aattiva; 
 
 USE `5aattiva`;
