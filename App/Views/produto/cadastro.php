@@ -34,7 +34,7 @@
                 <div class="form-group">
                     <label for="descricao">Descrição</label>
                     <textarea class="form-control" name="descricao" placeholder="Descrição do produto" required><?php echo $Sessao::retornaValorFormulario('descricao'); ?></textarea>
-
+                </div>
 
                 <div class="form-group">
                     <label for="nome">Data de Início</label>
@@ -47,34 +47,36 @@
                     <input type="text" class="form-control"  id="datafim"name="datafim" placeholder="Data de Fim" value="<?php echo $Sessao::retornaValorFormulario('datafim'); ?>">
                 </div>
 
-                
+                <!--
                 <div class="form-group">
                     <label for="nome">Status</label>
                     <input type="text" class="form-control"  name="idstatus" placeholder="Status" value="<?php echo $Sessao::retornaValorFormulario('status'); ?>" required>
                 </div>
-                
-                <!--
-               <div class="form-group">
-                    <label for="nome">Status</label>
-            		<label for="idstatus" class="validar field select">
-            			<select name="idstatus" id="idstatus">
-            				<option value="">Selecione ...</option>
-            				<option value="1">Pendente</option>
-            				<option value="2">Em Desenvolvimento</option>
-            				<option value="3">Em Teste</option>
-            				<option value="4">Concluido</option>
-            			</select>
-            		</label>
-            	</div>
                 -->
                 
                 <div class="form-group">
-                    <label for="nome">Situação</label>
-                    <input type="text" class="form-control"  name="idsituacao" placeholder="Situação" value="<?php echo $Sessao::retornaValorFormulario('situacao'); ?>" required>
+                    <label for="nome">Status</label>
+                    <?php $val = 0; ?>
+                    <select name="idstatus" id="idstatus">
+                        <option value="">Selecione ...</option>
+                        <option value="1" <?php echo ($val == 1) ? 'selected' : null ; ?>>Pendente</option>
+                        <option value="2" <?php echo ($val == 2) ? 'selected' : null ; ?>>Em Desenvolvimento</option>
+                        <option value="3" <?php echo ($val == 3) ? 'selected' : null ; ?>>Em Teste</option>
+                        <option value="4" <?php echo ($val == 4) ? 'selected' : null ; ?>>Concluido</option>
+                    </select>
                 </div>
                 
-
+                
+                <div class="form-group">
+                    <label for="nome">Situação</label>
+                    <?php $val = 0; ?>
+                    <select name="idsituacao" id="idsituacao">
+                        <option value="">Selecione ...</option>
+                        <option value="1" <?php echo ($val == 1) ? 'selected' : null ; ?>>Ativo</option>
+                        <option value="2" <?php echo ($val == 2) ? 'selected' : null ; ?>>Inativo</option>
+                    </select>
                 </div>
+                
 
                 <button type="submit" class="btn btn-success btn-sm">Salvar</button>
             </form>
@@ -84,10 +86,15 @@
 </div>
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+	
 <script type="text/javascript" >
     $(document).ready(function(){
-      var date_input=$('input[name="datainicio"]'); //our date input has the name "date"
+      var date_input=$('input[name="datainicio"]'); 
       var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
       var options={
         format: 'mm/dd/yyyy',
@@ -100,6 +107,5 @@
 </script>
 
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
 

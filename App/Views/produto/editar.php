@@ -49,32 +49,40 @@
                     <input type="text" class="form-control"  name="datafim" placeholder="Data de Fim" value="<?php echo $viewVar['produto']->getDataFim(); ?>">
                 </div>
 
-             
+                <!--
                 <div class="form-group">
                     <label for="nome">Status</label>
                     <input type="text" class="form-control"  name="idstatus" placeholder="Status" value="<?php echo $viewVar['produto']->getIdStatus(); ?>" required>
                 </div>
+                -->
                 
-               <!-- 
-               <div class="form-group">
+                <div class="form-group">
                     <label for="nome">Status</label>
-            		<label for="idstatus" class="validar field select">
-            			<select name="idstatus" id="idstatus">
-            				<option value="">Selecione ...</option>
-            				<option value="1">Pendente</option>
-            				<option value="2">Em Desenvolvimento</option>
-            				<option value="3">Em Teste</option>
-            				<option value="4">Concluido</option>
-            			</select>
-            		</label>
-            	</div>
-                -->    
+                    <?php $val = $viewVar['produto']->getIdStatus(); ?>
+                    <select name="idstatus" id="idstatus">
+                        <option value="">Selecione ...</option>
+                        <option value="1" <?php echo ($val == 1) ? 'selected' : null ; ?>>Pendente</option>
+                        <option value="2" <?php echo ($val == 2) ? 'selected' : null ; ?>>Em Desenvolvimento</option>
+                        <option value="3" <?php echo ($val == 3) ? 'selected' : null ; ?>>Em Teste</option>
+                        <option value="4" <?php echo ($val == 4) ? 'selected' : null ; ?>>Concluido</option>
+                    </select>
+                </div>
 
+                <!--                    
                 <div class="form-group">
                     <label for="nome">Situação</label>
                     <input type="text" class="form-control"  name="idsituacao" placeholder="Situação" value="<?php echo $viewVar['produto']->getIdSituacao(); ?>" required>
                 </div>
-
+                -->
+                <div class="form-group">
+                    <label for="nome">Situação</label>
+                    <?php $val = $viewVar['produto']->getIdSituacao(); ?>
+                    <select name="idsituacao" id="idsituacao">
+                        <option value="">Selecione ...</option>
+                        <option value="1" <?php echo ($val == 1) ? 'selected' : null ; ?>>Ativo</option>
+                        <option value="2" <?php echo ($val == 2) ? 'selected' : null ; ?>>Inativo</option>
+                    </select>
+                </div>
 
 
                 <button type="submit" class="btn btn-success btn-sm">Salvar</button>

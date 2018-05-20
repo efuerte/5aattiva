@@ -1,8 +1,3 @@
-<script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-</script>
-
-
 <div class="container">
     <div class="row">
     <br>
@@ -27,7 +22,7 @@
         ?>
             
             <div class="table-responsive">
-                <table class="table table-bordered table-hover">
+                <table class="table table-bordered table-hover status_info">
                     <tr>
                         <td class="info">Nome</td>
                         <!--
@@ -86,10 +81,31 @@
 </div>
 
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script>
-$(document).ready(function(){
-    $(".status_info").css("color","green");
+$(function() {
+	$('.table tr').each(function(i,e) {
+		if ($('td:eq(5)', this).text() == 'Ativo') {
+			$(this).css({backgroundColor: 'green'});
+		}
+	});
 });
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
