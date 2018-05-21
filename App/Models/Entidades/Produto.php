@@ -111,29 +111,36 @@ class Produto
     {
         
         $retorno="";
+       
+        $dsn    = "mysql:dbname=5aattiva;host=localhost";
+        $user   = "root";
+        $pass   = "espiriplug";
         
-        switch ($this->idstatus) {
-            case 1:
-                $retorno = "Pendente";
-                break;
-            case 2:
-                $retorno = "Em Desenvolvimento";
-                break;
-            case 3:
-                $retorno = "Em Teste";
-                break;
-            case 4:
-                $retorno = "Concluido";
-                break;
-            default:
-              $retorno = "Indefinido";  ;
+        try {
+        
+            $id = $this->idstatus;
+        
+            $dbh = new \PDO($dsn, $user, $pass);
+            $dbh->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_OBJ);
+            $dbh->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
+            
+            $select = $dbh->query("SELECT nome FROM status WHERE id = '".$id."'");
+            
+            $result = $select->fetch(\PDO::FETCH_ASSOC);
+            
+            $retorno = $result['nome'];
+
+            return $retorno;
+            
+            
+        
+        } catch(\PDOException $e) {
+        
+            die($e->getMessage());
+        
         }
-        
-        return $retorno;
     }
-
-
-
+  
 
     public function setIdStatus($idStatus)
     {

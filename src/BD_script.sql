@@ -11,20 +11,22 @@ CREATE TABLE `5aattiva`.produto (
   nome varchar(200) NOT NULL,
   preco double(10, 2) DEFAULT NULL,
   quantidade int(11) DEFAULT NULL,
-  descricao text DEFAULT NULL,
+  descricao varchar(600) DEFAULT NULL,
   dataCadastro datetime DEFAULT CURRENT_TIMESTAMP,
   dataInicio date DEFAULT NULL,
   dataFim date DEFAULT NULL,
   idstatus int(11) DEFAULT NULL,
   idsituacao int(11) DEFAULT NULL,
-  PRIMARY KEY (id)
+  PRIMARY KEY (id),
+  INDEX idstatus (idstatus),
+  CONSTRAINT produto_ibfk_1 FOREIGN KEY (idstatus)
+  REFERENCES `5aattiva`.status (id) ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ENGINE = INNODB
-AUTO_INCREMENT = 17
-AVG_ROW_LENGTH = 2730
+AUTO_INCREMENT = 21
+AVG_ROW_LENGTH = 2340
 CHARACTER SET latin1
 COLLATE latin1_swedish_ci;
-
 
 
 SET NAMES 'utf8';

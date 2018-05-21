@@ -49,31 +49,39 @@
                     <input type="text" class="form-control"  name="datafim" placeholder="Data de Fim" value="<?php echo $viewVar['produto']->getDataFim(); ?>">
                 </div>
 
-                <!--
-                <div class="form-group">
-                    <label for="nome">Status</label>
-                    <input type="text" class="form-control"  name="idstatus" placeholder="Status" value="<?php echo $viewVar['produto']->getIdStatus(); ?>" required>
-                </div>
-                -->
+                
+                <?php
+                    $dsn    = "mysql:dbname=5aattiva;host=localhost";
+                    $user   = "root";
+                    $pass   = "espiriplug";
+                    
+                    try {
+                    
+                        $dbh = new PDO($dsn, $user, $pass);
+                        $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+                        $dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+                    
+                        $status = $dbh->query("SELECT id, nome FROM status ORDER BY id")->fetchAll();
+                    
+                    } catch(PDOException $e) {
+                    
+                        die($e->getMessage());
+                    
+                    }
+                ?>
                 
                 <div class="form-group">
                     <label for="nome">Status</label>
-                    <?php $val = $viewVar['produto']->getIdStatus(); ?>
-                    <select name="idstatus" id="idstatus">
+                     <?php $statusId = $viewVar['produto']->getIdStatus(); ?>
+                     <select name="idstatus" id="idstatus">
                         <option value="">Selecione ...</option>
-                        <option value="1" <?php echo ($val == 1) ? 'selected' : null ; ?>>Pendente</option>
-                        <option value="2" <?php echo ($val == 2) ? 'selected' : null ; ?>>Em Desenvolvimento</option>
-                        <option value="3" <?php echo ($val == 3) ? 'selected' : null ; ?>>Em Teste</option>
-                        <option value="4" <?php echo ($val == 4) ? 'selected' : null ; ?>>Concluido</option>
+                        <?php foreach ($status as $option): ?>
+                        <option value="<?php echo $option->id ?>" <?php echo ($statusId == $option->id) ? 'selected' : null ; ?>><?php echo $option->nome ?></option>
+                        <?php endforeach; ?>
                     </select>
-                </div>
+                </div>                    
+                
 
-                <!--                    
-                <div class="form-group">
-                    <label for="nome">Situação</label>
-                    <input type="text" class="form-control"  name="idsituacao" placeholder="Situação" value="<?php echo $viewVar['produto']->getIdSituacao(); ?>" required>
-                </div>
-                -->
                 <div class="form-group">
                     <label for="nome">Situação</label>
                     <?php $val = $viewVar['produto']->getIdSituacao(); ?>

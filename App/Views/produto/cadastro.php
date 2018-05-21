@@ -43,6 +43,35 @@
                 </div>
                 -->
                 
+                <?php
+                    $dsn    = "mysql:dbname=5aattiva;host=localhost";
+                    $user   = "root";
+                    $pass   = "espiriplug";
+                    
+                    try {
+                    
+                        $dbh = new PDO($dsn, $user, $pass);
+                        $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+                        $dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+                    
+                        $status = $dbh->query("SELECT id, nome FROM status ORDER BY id")->fetchAll();
+                    
+                    } catch(PDOException $e) {
+                    
+                        die($e->getMessage());
+                    
+                    }
+                ?>
+                
+                <label for="nome">Status</label>    
+                <select name="idstatus" id="idstatus">
+                    <option value="">Selecione ...</option>
+                    <?php foreach ($status as $option): ?>
+                    <option value="<?php echo $option->id ?>"><?php echo $option->nome ?></option>
+                    <?php endforeach; ?>
+                </select>
+                
+                <!--
                 <div class="form-group">
                     <label for="nome">Status</label>
                     <?php $val = 0; ?>
@@ -54,7 +83,7 @@
                         <option value="4" <?php echo ($val == 4) ? 'selected' : null ; ?>>Concluido</option>
                     </select>
                 </div>
-                
+                -->
                 
                 <div class="form-group">
                     <label for="nome">Situação</label>
