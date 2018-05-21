@@ -1,3 +1,5 @@
+-- Configurar acesso ao BD em \App\App.php
+
 -- Criação da base de dados e tabela
 
 create database 5aattiva; 
@@ -27,6 +29,27 @@ COLLATE latin1_swedish_ci;
 
 SET NAMES 'utf8';
 
+CREATE TABLE `5aattiva`.status (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  nome varchar(30) NOT NULL,
+  PRIMARY KEY (id)
+)
+ENGINE = INNODB
+AUTO_INCREMENT = 5
+AVG_ROW_LENGTH = 4096
+CHARACTER SET latin1
+COLLATE latin1_swedish_ci;
+
+INSERT INTO `5aattiva`.status(id, nome) VALUES
+(1, 'Pendente');
+INSERT INTO `5aattiva`.status(id, nome) VALUES
+(2, 'Em desenvolvimento');
+INSERT INTO `5aattiva`.status(id, nome) VALUES
+(3, 'Em Teste');
+INSERT INTO `5aattiva`.status(id, nome) VALUES
+(4, 'Concluido');
+
+
 INSERT INTO `5aattiva`.produto(id, nome, preco, quantidade, descricao, dataCadastro, dataInicio, dataFim, idstatus, idsituacao) VALUES
 (12, 'asas', NULL, NULL, 'asas', '2018-05-20 21:19:23', '2017-10-16', '0000-00-00', 2, 2);
 INSERT INTO `5aattiva`.produto(id, nome, preco, quantidade, descricao, dataCadastro, dataInicio, dataFim, idstatus, idsituacao) VALUES
@@ -43,15 +66,7 @@ INSERT INTO `5aattiva`.produto(id, nome, preco, quantidade, descricao, dataCadas
 (18, 'bbbb', NULL, NULL, 'bbbbb', '2018-05-20 22:17:53', '2017-10-16', '0000-00-00', 4, 1);
 
 
-INSERT INTO `5aattiva`.status(id, nome) VALUES
-(1, 'Pendente');
-INSERT INTO `5aattiva`.status(id, nome) VALUES
-(2, 'Em desenvolvimento');
-INSERT INTO `5aattiva`.status(id, nome) VALUES
-(3, 'Em Teste');
-INSERT INTO `5aattiva`.status(id, nome) VALUES
-(4, 'Concluido');
 
 
--- Configurar o BD em \App\App.php
+
 
