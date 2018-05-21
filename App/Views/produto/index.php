@@ -25,11 +25,7 @@
                 <table class="table table-bordered table-hover status_info">
                     <tr>
                         <td class="info">Nome</td>
-                        <!--
-                        <td class="info">Preço</td>
-                        <td class="info">Quantidade</td>
-                        <td class="info">Data Cadastro</td>
-                        -->
+              
                         <td class="info">Descrição</td>
                         
                         <td class="info">Data de Início</td>
@@ -88,6 +84,10 @@ $(function() {
 	$('.table tr').each(function(i,e) {
 		if ($('td:eq(4)', this).text() == 'Concluido') {
 			$(this).css({backgroundColor: 'green'});
+            
+            //$('.table btn', this).prop('disabled', true);
+            $('.btn', this).addClass('disabled');
+            
 		}
 	});
 });
