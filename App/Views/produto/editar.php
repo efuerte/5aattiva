@@ -51,9 +51,11 @@
 
                 
                 <?php
+                    
                     $dsn    = "mysql:dbname=5aattiva;host=localhost";
-                    $user   = "root";
-                    $pass   = "espiriplug";
+                    
+                    $user   = DB_USER;
+                    $pass   = DB_PASSWORD;
                     
                     try {
                     

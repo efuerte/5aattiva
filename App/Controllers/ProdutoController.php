@@ -20,6 +20,21 @@ class ProdutoController extends Controller
         Sessao::limpaMensagem();
     }
 
+
+    public function teste_data()
+    {
+        $produtoDAO = new ProdutoDAO();
+
+        //self::setViewParam('listaProdutos',$produtoDAO->listar());
+
+        $this->render('/produto/teste_data');
+
+        Sessao::limpaMensagem();
+    }
+
+
+
+
     public function cadastro()
     {
         $this->render('/produto/cadastro');
@@ -175,7 +190,7 @@ class ProdutoController extends Controller
             $this->redirect('/produto');
         }
 
-        Sessao::gravaMensagem("Atividade excluido com sucesso!");
+        Sessao::gravaMensagem("Atividade excluida com sucesso!");
 
         $this->redirect('/produto');
 

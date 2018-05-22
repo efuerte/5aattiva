@@ -1,3 +1,17 @@
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css">  
+  <style type="text/css">
+  </style>
+  <title></title>
+  
+  
 <div class="container">
     <div class="row">
         <div class="col-md-3"></div>
@@ -27,7 +41,10 @@
 
                 <div class="form-group">
                     <label for="nome">Data de Início</label>
+                  	<input class="form-control" id="datainicio" name="datainicio" placeholder="Data de Início" value="<?php echo $Sessao::retornaValorFormulario('datainicio'); ?>" required="" type="text">
+                    <!--
                     <input type="text" class="form-control" id="datainicio" name="datainicio" placeholder="Data de Início" value="<?php echo $Sessao::retornaValorFormulario('datainicio'); ?>" required>
+                    -->                        
                 </div>
 
 
@@ -43,10 +60,23 @@
                 </div>
                 -->
                 
+<!--                
+        define('PATH'           , realpath('./'));
+        define('TITLE'          , "Cadastro de Atividades - 5A Attiva");
+        define('DB_HOST'        , "localhost");
+        define('DB_USER'        , "root");
+        define('DB_PASSWORD'    , "espiriplug"); // Sua senha
+        define('DB_NAME'        , "5aattiva");
+        define('DB_DRIVER'      , "mysql");
+-->                
+                
+                
+                
                 <?php
                     $dsn    = "mysql:dbname=5aattiva;host=localhost";
-                    $user   = "root";
-                    $pass   = "espiriplug";
+                    
+                    $user   = DB_USER;
+                    $pass   = DB_PASSWORD;
                     
                     try {
                     
@@ -104,13 +134,19 @@
 </div>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-
+<script>
+  // tell the embed parent frame the height of the content
+  if (window.parent && window.parent.parent){
+    window.parent.parent.postMessage(["resultsFrame", {
+      height: document.body.getBoundingClientRect().height,
+      slug: "9h7sqc4o"
+    }], "*")
+  }
+</script>
 	
-<script type="text/javascript" >
+
+
+<script type="text/javascript">
     $(document).ready(function(){
       var date_input=$('input[name="datainicio"]'); 
       var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
@@ -124,6 +160,4 @@
     })
 </script>
 
-
-
-
+</body></html>

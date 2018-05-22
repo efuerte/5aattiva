@@ -153,7 +153,7 @@ class AtividadeController extends Controller
             $this->redirect('/atividade');
         }
 
-        Sessao::gravaMensagem("atividade excluido com sucesso!");
+        Sessao::gravaMensagem("atividade excluida com sucesso!");
 
         $this->redirect('/atividade');
 
