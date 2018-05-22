@@ -24,9 +24,9 @@ class App
         /*
          * Constantes do sistema
          */
-        //define('APP_HOST'       , $_SERVER['HTTP_HOST'] . "/pronto/mvc-php-crud-produto");
+        //define('APP_HOST'       , $_SERVER['HTTP_HOST'] . "/pronto/5aattiva");
         
-        define('APP_HOST'       , $_SERVER['HTTP_HOST'] . "/mvc-php-crud-produto");
+        define('APP_HOST'       , $_SERVER['HTTP_HOST'] . "/5aattiva");
         
         
         define('PATH'           , realpath('./'));
