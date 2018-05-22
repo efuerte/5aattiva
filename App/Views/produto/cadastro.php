@@ -127,6 +127,7 @@
                 
 
                 <button type="submit" class="btn btn-success btn-sm">Salvar</button>
+                <a href="http://<?php echo APP_HOST; ?>/produto" class="btn btn-info btn-sm">Voltar</a>
             </form>
         </div>
         <div class=" col-md-3"></div>
