@@ -1,4 +1,6 @@
--- Configurar acesso ao BD em \App\App.php
+---
+-- Configurar acesso ao BD em \App\App.php   de acordo com BD de Teste
+--
 
 -- Criação da base de dados e tabela
 

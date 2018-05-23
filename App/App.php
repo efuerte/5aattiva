@@ -24,11 +24,8 @@ class App
         /*
          * Constantes do sistema
          */
-        //define('APP_HOST'       , $_SERVER['HTTP_HOST'] . "/pronto/5aattiva");
-        
+
         define('APP_HOST'       , $_SERVER['HTTP_HOST'] . "/5aattiva");
-        
-        
         define('PATH'           , realpath('./'));
         define('TITLE'          , "Cadastro de Atividades - 5A Attiva");
         define('DB_HOST'        , "localhost");

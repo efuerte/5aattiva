@@ -41,36 +41,15 @@
 
                 <div class="form-group">
                     <label for="nome">Data de Início</label>
-                  	<input class="form-control" id="datainicio" name="datainicio" placeholder="Data de Início" value="<?php echo $Sessao::retornaValorFormulario('datainicio'); ?>" required="" type="text">
-                    <!--
-                    <input type="text" class="form-control" id="datainicio" name="datainicio" placeholder="Data de Início" value="<?php echo $Sessao::retornaValorFormulario('datainicio'); ?>" required>
-                    -->                        
+                  	<input class="form-control" id="datainicio" name="datainicio" placeholder="Data de Início (YYY-MM-DD)" value="<?php echo $Sessao::retornaValorFormulario('datainicio'); ?>" required="" type="text">
                 </div>
 
 
                 <div class="form-group">
                     <label for="nome">Data de Fim</label>
-                    <input type="text" class="form-control"  id="datafim"name="datafim" placeholder="Data de Fim" value="<?php echo $Sessao::retornaValorFormulario('datafim'); ?>">
+                    <input type="text" class="form-control"  id="datafim"name="datafim" placeholder="Data de Fim (YYY-MM-DD)" value="<?php echo $Sessao::retornaValorFormulario('datafim'); ?>">
                 </div>
 
-                <!--
-                <div class="form-group">
-                    <label for="nome">Status</label>
-                    <input type="text" class="form-control"  name="idstatus" placeholder="Status" value="<?php echo $Sessao::retornaValorFormulario('status'); ?>" required>
-                </div>
-                -->
-                
-<!--                
-        define('PATH'           , realpath('./'));
-        define('TITLE'          , "Cadastro de Atividades - 5A Attiva");
-        define('DB_HOST'        , "localhost");
-        define('DB_USER'        , "root");
-        define('DB_PASSWORD'    , "espiriplug"); // Sua senha
-        define('DB_NAME'        , "5aattiva");
-        define('DB_DRIVER'      , "mysql");
--->                
-                
-                
                 
                 <?php
                     $dsn    = "mysql:dbname=5aattiva;host=localhost";
@@ -100,20 +79,6 @@
                     <option value="<?php echo $option->id ?>"><?php echo $option->nome ?></option>
                     <?php endforeach; ?>
                 </select>
-                
-                <!--
-                <div class="form-group">
-                    <label for="nome">Status</label>
-                    <?php $val = 0; ?>
-                    <select name="idstatus" id="idstatus">
-                        <option value="">Selecione ...</option>
-                        <option value="1" <?php echo ($val == 1) ? 'selected' : null ; ?>>Pendente</option>
-                        <option value="2" <?php echo ($val == 2) ? 'selected' : null ; ?>>Em Desenvolvimento</option>
-                        <option value="3" <?php echo ($val == 3) ? 'selected' : null ; ?>>Em Teste</option>
-                        <option value="4" <?php echo ($val == 4) ? 'selected' : null ; ?>>Concluido</option>
-                    </select>
-                </div>
-                -->
                 
                 <div class="form-group">
                     <label for="nome">Situação</label>

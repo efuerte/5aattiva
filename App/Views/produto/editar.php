@@ -22,18 +22,6 @@
                     <input type="text"  class="form-control" name="nome" id="nome" placeholder="" value="<?php echo $viewVar['produto']->getNome(); ?>" required>
                 </div>
 
-                <!--                
-                <div class="form-group">
-                    <label for="preco">Preço</label>
-                    <input type="text"  class="form-control"  name="preco" id="preco" placeholder="" value="<?php echo $viewVar['produto']->getPreco(); ?>" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="quantidade">Quantidade</label>
-                    <input type="number"  class="form-control"  name="quantidade" id="quantidade" placeholder="" value="<?php echo $viewVar['produto']->getQuantidade(); ?>" required>
-                </div>
-                -->
-                
                 <div class="form-group">
                     <label for="quantidade">Descrição</label>
                     <textarea class="form-control" name="descricao" placeholder="Descrição do produto" required><?php echo $viewVar['produto']->getDescricao(); ?></textarea>
@@ -41,12 +29,12 @@
 
                 <div class="form-group">
                     <label for="nome">Data de Início</label>
-                    <input type="text" class="form-control"  name="datainicio" placeholder="Data de Início" value="<?php echo $viewVar['produto']->getDataInicio();  ?>" required>
+                    <input type="text" class="form-control"  name="datainicio" placeholder="Data de Início (YYY-MM-DD)" value="<?php echo $viewVar['produto']->getDataInicio();  ?>" required>
                 </div>
 
                 <div class="form-group">
                     <label for="nome">Data de Fim</label>
-                    <input type="text" class="form-control"  name="datafim" placeholder="Data de Fim" value="<?php echo $viewVar['produto']->getDataFim(); ?>">
+                    <input type="text" class="form-control"  name="datafim" placeholder="Data de Fim (YYY-MM-DD)" value="<?php echo $viewVar['produto']->getDataFim(); ?>">
                 </div>
 
                 
