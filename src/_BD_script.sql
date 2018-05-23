@@ -8,29 +8,6 @@ create database 5aattiva;
 
 USE `5aattiva`;
 
-CREATE TABLE `5aattiva`.produto (
-  id int(11) NOT NULL AUTO_INCREMENT,
-  nome varchar(200) NOT NULL,
-  preco double(10, 2) DEFAULT NULL,
-  quantidade int(11) DEFAULT NULL,
-  descricao varchar(600) DEFAULT NULL,
-  dataCadastro datetime DEFAULT CURRENT_TIMESTAMP,
-  dataInicio date DEFAULT NULL,
-  dataFim date DEFAULT NULL,
-  idstatus int(11) DEFAULT NULL,
-  idsituacao int(11) DEFAULT NULL,
-  PRIMARY KEY (id),
-  INDEX idstatus (idstatus),
-  CONSTRAINT produto_ibfk_1 FOREIGN KEY (idstatus)
-  REFERENCES `5aattiva`.status (id) ON DELETE RESTRICT ON UPDATE RESTRICT
-)
-ENGINE = INNODB
-AUTO_INCREMENT = 21
-AVG_ROW_LENGTH = 2340
-CHARACTER SET latin1
-COLLATE latin1_swedish_ci;
-
-
 SET NAMES 'utf8';
 
 CREATE TABLE `5aattiva`.status (
@@ -52,6 +29,30 @@ INSERT INTO `5aattiva`.status(id, nome) VALUES
 (3, 'Em Teste');
 INSERT INTO `5aattiva`.status(id, nome) VALUES
 (4, 'Concluido');
+
+
+
+CREATE TABLE `5aattiva`.produto (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  nome varchar(200) NOT NULL,
+  preco double(10, 2) DEFAULT NULL,
+  quantidade int(11) DEFAULT NULL,
+  descricao varchar(600) DEFAULT NULL,
+  dataCadastro datetime DEFAULT CURRENT_TIMESTAMP,
+  dataInicio date DEFAULT NULL,
+  dataFim date DEFAULT NULL,
+  idstatus int(11) DEFAULT NULL,
+  idsituacao int(11) DEFAULT NULL,
+  PRIMARY KEY (id),
+  INDEX idstatus (idstatus),
+  CONSTRAINT produto_ibfk_1 FOREIGN KEY (idstatus)
+  REFERENCES `5aattiva`.status (id) ON DELETE RESTRICT ON UPDATE RESTRICT
+)
+ENGINE = INNODB
+AUTO_INCREMENT = 21
+AVG_ROW_LENGTH = 2340
+CHARACTER SET latin1
+COLLATE latin1_swedish_ci;
 
 
 INSERT INTO `5aattiva`.produto(id, nome, preco, quantidade, descricao, dataCadastro, dataInicio, dataFim, idstatus, idsituacao) VALUES
