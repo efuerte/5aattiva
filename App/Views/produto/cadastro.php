@@ -41,13 +41,13 @@
 
                 <div class="form-group">
                     <label for="nome">Data de Início</label>
-                  	<input class="form-control" id="datainicio" name="datainicio" placeholder="Data de Início (YYY-MM-DD)" value="<?php echo $Sessao::retornaValorFormulario('datainicio'); ?>" required="" type="text">
+                  	<input class="form-control" id="datainicio" name="datainicio" placeholder="Data de Início (YYYY-MM-DD)" value="<?php echo $Sessao::retornaValorFormulario('datainicio'); ?>" required="" type="text">
                 </div>
 
 
                 <div class="form-group">
                     <label for="nome">Data de Fim</label>
-                    <input type="text" class="form-control"  id="datafim"name="datafim" placeholder="Data de Fim (YYY-MM-DD)" value="<?php echo $Sessao::retornaValorFormulario('datafim'); ?>">
+                    <input type="text" class="form-control"  id="datafim"name="datafim" placeholder="Data de Fim (YYYY-MM-DD)" value="<?php echo $Sessao::retornaValorFormulario('datafim'); ?>">
                 </div>
 
                 

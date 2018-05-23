@@ -29,12 +29,12 @@
 
                 <div class="form-group">
                     <label for="nome">Data de Início</label>
-                    <input type="text" class="form-control"  name="datainicio" placeholder="Data de Início (YYY-MM-DD)" value="<?php echo $viewVar['produto']->getDataInicio();  ?>" required>
+                    <input type="text" class="form-control"  name="datainicio" placeholder="Data de Início (YYYY-MM-DD)" value="<?php echo $viewVar['produto']->getDataInicio();  ?>" required>
                 </div>
 
                 <div class="form-group">
                     <label for="nome">Data de Fim</label>
-                    <input type="text" class="form-control"  name="datafim" placeholder="Data de Fim (YYY-MM-DD)" value="<?php echo $viewVar['produto']->getDataFim(); ?>">
+                    <input type="text" class="form-control"  name="datafim" placeholder="Data de Fim (YYYY-MM-DD)" value="<?php echo $viewVar['produto']->getDataFim(); ?>">
                 </div>
 
                 
