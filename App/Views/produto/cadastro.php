@@ -52,16 +52,16 @@
 
                 
                 <?php
-                    $dsn    = "mysql:dbname=5aattiva;host=localhost";
+                    $dsn    = "mysql:dbname=5aattiva;host=".DB_HOST;
                     
                     $user   = DB_USER;
                     $pass   = DB_PASSWORD;
                     
                     try {
                     
-                        $dbh = new PDO($dsn, $user, $pass);
-                        $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-                        $dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+                        $dbh = new \PDO($dsn, $user, $pass);
+                        $dbh->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_OBJ);
+                        $dbh->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
                     
                         $status = $dbh->query("SELECT id, nome FROM status ORDER BY id")->fetchAll();
                     
