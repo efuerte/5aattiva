@@ -17,12 +17,6 @@ class Conexao
         $pdoConfig  = DB_DRIVER . ":". "host=" . DB_HOST . ";";
         $pdoConfig .= "dbname=".DB_NAME.";";
 
-//print_r($pdoConfig);
-//exit;
-
-
-
-
         try { 
             if(!isset(self::$connection)){
                 self::$connection =  new PDO($pdoConfig, DB_USER, DB_PASSWORD);

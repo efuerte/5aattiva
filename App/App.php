@@ -29,7 +29,7 @@ class App
         define('PATH'           , realpath('./'));
         define('TITLE'          , "Cadastro de Atividades - 5A Attiva");
         define('DB_HOST'        , "localhost");
-        define('DB_USER'        , "root");
+        define('DB_USER'        , "root");       // seu usuário
         define('DB_PASSWORD'    , "espiriplug"); // Sua senha
         define('DB_NAME'        , "5aattiva");
         define('DB_DRIVER'      , "mysql");

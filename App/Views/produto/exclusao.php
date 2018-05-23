@@ -3,7 +3,7 @@
         <div class="col-md-3"></div>
         <div class="col-md-6">
 
-            <h3>Excluir Produto</h3>
+            <h3>Excluir Atividade</h3>
 
             <?php if($Sessao::retornaErro()){ ?>
                 <div class="alert alert-warning" role="alert">
@@ -19,7 +19,7 @@
 
                 <div class="panel panel-danger">
                     <div class="panel-body">
-                        Deseja realmente excluir o produto: <?php echo $viewVar['produto']->getNome(); ?> ?
+                        Deseja realmente excluir a atividade: <?php echo $viewVar['produto']->getNome(); ?> ?
                     </div>
                     <div class="panel-footer"> 
                         <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
